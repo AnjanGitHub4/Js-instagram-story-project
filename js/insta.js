@@ -49,11 +49,26 @@ function viewInstaStoryImg(idx) {
     });
     img += `
         <div class="insta-progress-bar"></div>
-        <img src="${story}" alt="insta image" id="${idx}" />`;
+        <div class="insta-full-img">
+            <img src="${story}" alt="insta image" id="${idx}" />
+            <span class="insta-like-btn"><i class="fa-solid fa-heart fa-2x" style="color: #f02828;"></i></span>  
+        </div>
+        `;
     fullScreenImg.style.display = "block";
     fullScreenImg.style.transition = "all 3s easy";
     fullScreenImg.innerHTML = img;
-
+    // insta like button 
+    document.querySelector('.insta-full-img img').addEventListener("dblclick", (e) => {
+        document.querySelector(".fa-heart").style.transform = "scale(1.5)";
+        document.querySelector(".fa-heart").style.display = "block";
+        document.querySelector(".fa-heart").style.transition = "all 1s ease-in-out";
+        setTimeout(() => {
+            document.querySelector(".fa-heart").style.transition = "all 2s ease";
+            document.querySelector(".fa-heart").style.transform = "scale(0)";
+            document.querySelector(".fa-heart").style.display = "none";
+        }, 1000);
+    });
+    // hide insta-fullscreen box
     setTimeout(() => {
         img = "";
         fullScreenImg.style.display = "none";
@@ -67,17 +82,7 @@ instaStoryWrapper.addEventListener("click", function (event) {
     viewInstaStoryImg(event.target.id);
 
 });
-// insta like button 
-document.querySelector('.insta-full-img img').addEventListener("dblclick",(e)=>{
-    document.querySelector(".fa-heart").style.transform="scale(1.5)";
-    document.querySelector(".fa-heart").style.display="block";
-    document.querySelector(".fa-heart").style.transition="all 1s ease-in-out";
-    setTimeout(()=>{
-    document.querySelector(".fa-heart").style.transition="all 2s ease";
-        document.querySelector(".fa-heart").style.transform="scale(0)";
-        document.querySelector(".fa-heart").style.display="none";
-    },1000);
-}) 
+
 
 
 

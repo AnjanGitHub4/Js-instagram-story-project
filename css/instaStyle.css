@@ -85,7 +85,7 @@ body {
     background: rgb(129, 28, 245);
     border-radius: 5px;
     overflow: hidden;
-    /* display: none; */
+    display: none;
     transition: all 2s easy;
 }
 .insta-full-img {
