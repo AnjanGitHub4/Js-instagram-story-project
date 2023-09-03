@@ -51,7 +51,7 @@ function viewInstaStoryImg(idx) {
         <div class="insta-progress-bar"></div>
         <img src="${story}" alt="insta image" id="${idx}" />`;
     fullScreenImg.style.display = "block";
-    fullScreenImg.style.transition = "all .3s easy";
+    fullScreenImg.style.transition = "all 3s easy";
     fullScreenImg.innerHTML = img;
 
     setTimeout(() => {
@@ -67,7 +67,17 @@ instaStoryWrapper.addEventListener("click", function (event) {
     viewInstaStoryImg(event.target.id);
 
 });
-
+// insta like button 
+document.querySelector('.insta-full-img img').addEventListener("dblclick",(e)=>{
+    document.querySelector(".fa-heart").style.transform="scale(1.5)";
+    document.querySelector(".fa-heart").style.display="block";
+    document.querySelector(".fa-heart").style.transition="all 1s ease-in-out";
+    setTimeout(()=>{
+    document.querySelector(".fa-heart").style.transition="all 2s ease";
+        document.querySelector(".fa-heart").style.transform="scale(0)";
+        document.querySelector(".fa-heart").style.display="none";
+    },1000);
+}) 
 
 
 
