@@ -57,6 +57,8 @@ function viewInstaStoryImg(idx) {
     setTimeout(() => {
         img = "";
         fullScreenImg.style.display = "none";
+        fullScreenImg.innerHTML = img;
+
     }, 5500);
 }
 // get current clicked story items
